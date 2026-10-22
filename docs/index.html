@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Fiktive personaer med detaljert og enkel avatar.">
+  <title>Personasgalleri</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='22' r='14' fill='%23172638'/%3E%3Cpath d='M8 60c2-16 14-24 24-24s22 8 24 24' fill='%23172638'/%3E%3C/svg%3E">
+  <style>
+    :root { --navy: #172638; --blue: #315d86; --paper: #f4f7fa; --line: #d3dee8; --muted: #596878; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--navy); background: var(--paper); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.5; }
+    main { max-width: 1400px; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
+    header { max-width: 800px; margin: 0 0 3rem; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { font-size: clamp(2.1rem, 5vw, 4.1rem); letter-spacing: -0.055em; margin-bottom: .7rem; }
+    .intro { font-size: 1.1rem; color: var(--muted); max-width: 65ch; }
+    .source-note { font-size: .9rem; color: var(--muted); margin-bottom: 0; }
+    .persona-group { margin-top: 3.8rem; }
+    .persona-group > h2 { font-size: 1.45rem; margin-bottom: 1rem; }
+    .persona-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 1rem; }
+    .persona-card { display: grid; grid-template-columns: 160px 1fr; gap: .25rem 1.15rem; min-width: 0; background: #fff; border: 1px solid var(--line); border-radius: 1rem; padding: 1rem; box-shadow: 0 3px 16px rgba(23, 38, 56, .05); }
+    .avatars { display: grid; grid-template-columns: 1fr 1fr; gap: .25rem; align-content: start; }
+    figure { margin: 0; text-align: center; }
+    figure img { display: block; width: 100%; aspect-ratio: 1; object-fit: contain; }
+    .avatar-unavailable { align-items: center; aspect-ratio: 1; background: #eef3f7; border: 1px dashed var(--line); border-radius: .65rem; color: var(--muted); display: flex; font-size: .75rem; justify-content: center; padding: .4rem; }
+    figcaption { color: var(--muted); font-size: .72rem; margin-top: -.2rem; }
+    .persona-content { min-width: 0; }
+    .card-heading { display: flex; gap: .75rem; align-items: flex-start; justify-content: space-between; border-bottom: 1px solid var(--line); margin-bottom: .85rem; padding-bottom: .8rem; }
+    .role { color: var(--blue); font-size: .82rem; font-weight: 700; letter-spacing: .035em; margin-bottom: .1rem; text-transform: uppercase; }
+    .card-heading h2 { font-size: 1.35rem; line-height: 1.1; margin-bottom: .2rem; }
+    .age { display: block; color: var(--muted); font-size: .93rem; }
+    .status { border: 1px solid var(--line); border-radius: 99px; color: var(--muted); font-size: .75rem; padding: .18rem .48rem; white-space: nowrap; }
+    .persona-notes + .persona-notes { margin-top: .8rem; }
+    .persona-notes h3 { font-size: .92rem; margin-bottom: .2rem; }
+    .persona-notes p { color: var(--muted); font-size: .9rem; margin-bottom: 0; }
+    @media (max-width: 540px) { main { padding: 2rem 1rem 3rem; } .persona-card { grid-template-columns: 130px 1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Personasgalleri</h1>
+      <p class="intro">Fiktive personaer for å utforske behov, roller og autorisasjonssituasjoner. Hvert kort viser samme figur i detaljert og enkel stil.</p>
+      <p class="source-note">Navnene er fiktive og alderspassende. De er valgt med utgangspunkt i SSBs navnestatistikk, og representerer ikke virkelige personer.</p>
+    </header>
+    
+  <section class="persona-group" aria-labelledby="Barn-og-ungdom">
+    <h2 id="Barn-og-ungdom">Barn og ungdom</h2>
+    <div class="persona-grid">
+    <article class="persona-card">
+      <div class="avatars">
+        <figure>
+          <img src="assets/avatarer/barn_gutt_1.png" alt="Detaljert avatar for Noah">
+          <figcaption>Detaljert</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/avatarer/barn_gutt_1_enkel.png" alt="Enkel avatar for Noah">
+          <figcaption>Enkel</figcaption>
+        </figure>
+      </div>
+      <div class="persona-content">
+        <div class="card-heading">
+          <div>
+            <p class="role">Barn</p>
+            <h2>Noah</h2>
+            <span class="age" data-birth-year="2017">Født 2017</span>
+          </div>
+          <span class="status">utkast</span>
+        </div>
+        <section class="persona-notes"><h3>Kort om personen</h3><p>Fiktivt barn. Videre beskrivelse kommer.</p></section><section class="persona-notes"><h3>Autorisasjonssituasjon</h3><p>Ikke beskrevet ennå.</p></section>
+      </div>
+    </article>
+    <article class="persona-card">
+      <div class="avatars">
+        <figure>
+          <img src="assets/avatarer/barn_jente_1.png" alt="Detaljert avatar for Emma">
+          <figcaption>Detaljert</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/avatarer/barn_jente_1_enkel.png" alt="Enkel avatar for Emma">
+          <figcaption>Enkel</figcaption>
+        </figure>
+      </div>
+      <div class="persona-content">
+        <div class="card-heading">
+          <div>
+            <p class="role">Barn</p>
+            <h2>Emma</h2>
+            <span class="age" data-birth-year="2018">Født 2018</span>
+          </div>
+          <span class="status">utkast</span>
+        </div>
+        <section class="persona-notes"><h3>Kort om personen</h3><p>Fiktivt barn. Videre beskrivelse kommer.</p></section><section class="persona-notes"><h3>Autorisasjonssituasjon</h3><p>Ikke beskrevet ennå.</p></section>
+      </div>
+    </article>
+    <article class="persona-card">
+      <div class="avatars">
+        <figure>
+          <img src="assets/avatarer/ung_voksen_kvinne_1.png" alt="Detaljert avatar for Sofie">
+          <figcaption>Detaljert</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/avatarer/ung_voksen_kvinne_1_enkel.png" alt="Enkel avatar for Sofie">
+          <figcaption>Enkel</figcaption>
+        </figure>
+      </div>
+      <div class="persona-content">
+        <div class="card-heading">
+          <div>
+            <p class="role">Ung voksen</p>
+            <h2>Sofie</h2>
+            <span class="age" data-birth-year="2006">Født 2006</span>
+          </div>
+          <span class="status">utkast</span>
+        </div>
+        <section class="persona-notes"><h3>Kort om personen</h3><p>Fiktiv ung voksen. Videre beskrivelse kommer.</p></section><section class="persona-notes"><h3>Autorisasjonssituasjon</h3><p>Ikke beskrevet ennå.</p></section>
+      </div>
+    </article>
+    <article class="persona-card">
+      <div class="avatars">
+        <figure>
+          <img src="assets/avatarer/ungdom_gutt_1.png" alt="Detaljert avatar for Elias">
+          <figcaption>Detaljert</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/avatarer/ungdom_gutt_1_enkel.png" alt="Enkel avatar for Elias">
+          <figcaption>Enkel</figcaption>
+        </figure>
+      </div>
+      <div class="persona-content">
+        <div class="card-heading">
+          <div>
+            <p class="role">Ungdom</p>
+            <h2>Elias</h2>
+            <span class="age" data-birth-year="2009">Født 2009</span>
+          </div>
+          <span class="status">utkast</span>
+        </div>
+        <section class="persona-notes"><h3>Kort om personen</h3><p>Fiktiv ungdom. Videre beskrivelse kommer.</p></section><section class="persona-notes"><h3>Autorisasjonssituasjon</h3><p>Ikke beskrevet ennå.</p></section>
+      </div>
+    </article>
+    <article class="persona-card">
+      <div class="avatars">
+        <figure>
+          <img src="assets/avatarer/ungdom_jente_1.png" alt="Detaljert avatar for Nora">
+          <figcaption>Detaljert</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/avatarer/ungdom_jente_1_enkel.png" alt="Enkel avatar for Nora">
+          <figcaption>Enkel</figcaption>
+        </figure>
+      </div>
+      <div class="persona-content">
+        <div class="card-heading">
+          <div>
+            <p class="role">Ungdom</p>
+            <h2>Nora</h2>
+            <span class="age" data-birth-year="2010">Født 2010</span>
+          </div>
+          <span class="status">utkast</span>
+        </div>
+        <section class="persona-notes"><h3>Kort om personen</h3><p>Fiktiv ungdom. Videre beskrivelse kommer.</p></section><section class="persona-notes"><h3>Autorisasjonssituasjon</h3><p>Ikke beskrevet ennå.</p></section>
+      </div>
+    </article></div>
+  </section>
+  <section class="persona-group" aria-labelledby="Arbeidsliv">
+    <h2 id="Arbeidsliv">Arbeidsliv</h2>
+    <div class="persona-grid">
+    <article class="persona-card">
+      <div class="avatars">
+        <figure>
+          <img src="assets/avatarer/fabrikkarbeider_kvinne_1.png" alt="Detaljert avatar for Mette">
+          <figcaption>Detaljert</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/avatarer/fabrikkarbeider_kvinne_1_enkel.png" alt="Enkel avatar for Mette">
+          <figcaption>Enkel</figcaption>
+        </figure>
+      </div>
+      <div class="persona-content">
+        <div class="card-heading">
+          <div>
+            <p class="role">Fabrikkarbeider</p>
+            <h2>Mette</h2>
+            <span class="age" data-birth-year="1972">Født 1972</span>
+          </div>
+          <span class="status">utkast</span>
+        </div>
+        <section class="persona-notes"><h3>Kort om personen</h3><p>Fiktiv fabrikkarbeider. Videre beskrivelse kommer.</p></section><section class="persona-notes"><h3>Autorisasjonssituasjon</h3><p>Ikke beskrevet ennå.</p></section>
+      </div>
+    </article>
+    <article class="persona-card">
+      <div class="avatars">
+        <figure>
+          <img src="assets/avatarer/fabrikkarbeider_mann_1.png" alt="Detaljert avatar for Roger">
+          <figcaption>Detaljert</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/avatarer/fabrikkarbeider_mann_1_enkel.png" alt="Enkel avatar for Roger">
+          <figcaption>Enkel</figcaption>
+        </figure>
+      </div>
+      <div class="persona-content">
+        <div class="card-heading">
+          <div>
+            <p class="role">Fabrikkarbeider</p>
+            <h2>Roger</h2>
+            <span class="age" data-birth-year="1971">Født 1971</span>
+          </div>
+          <span class="status">utkast</span>
+        </div>
+        <section class="persona-notes"><h3>Kort om personen</h3><p>Fiktiv fabrikkarbeider. Videre beskrivelse kommer.</p></section><section class="persona-notes"><h3>Autorisasjonssituasjon</h3><p>Ikke beskrevet ennå.</p></section>
+      </div>
+    </article>
+    <article class="persona-card">
+      <div class="avatars">
+        <figure>
+          <img src="assets/avatarer/kontorperson_kvinne_1.png" alt="Detaljert avatar for Tone">
+          <figcaption>Detaljert</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/avatarer/kontorperson_kvinne_1_enkel.png" alt="Enkel avatar for Tone">
+          <figcaption>Enkel</figcaption>
+        </figure>
+      </div>
+      <div class="persona-content">
+        <div class="card-heading">
+          <div>
+            <p class="role">Kontormedarbeider</p>
+            <h2>Tone</h2>
+            <span class="age" data-birth-year="1976">Født 1976</span>
+          </div>
+          <span class="status">utkast</span>
+        </div>
+        <section class="persona-notes"><h3>Kort om personen</h3><p>Fiktiv kontormedarbeider. Videre beskrivelse kommer.</p></section><section class="persona-notes"><h3>Autorisasjonssituasjon</h3><p>Ikke beskrevet ennå.</p></section>
+      </div>
+    </article>
+    <article class="persona-card">
+      <div class="avatars">
+        <figure>
+          <img src="assets/avatarer/kontorperson_mann_1.png" alt="Detaljert avatar for Øyvind">
+          <figcaption>Detaljert</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/avatarer/kontorperson_mann_1_enkel.png" alt="Enkel avatar for Øyvind">
+          <figcaption>Enkel</figcaption>
+        </figure>
+      </div>
+      <div class="persona-content">
+        <div class="card-heading">
+          <div>
+            <p class="role">Kontormedarbeider</p>
+            <h2>Øyvind</h2>
+            <span class="age" data-birth-year="1978">Født 1978</span>
+          </div>
+          <span class="status">utkast</span>
+        </div>
+        <section class="persona-notes"><h3>Kort om personen</h3><p>Fiktiv kontormedarbeider. Videre beskrivelse kommer.</p></section><section class="persona-notes"><h3>Autorisasjonssituasjon</h3><p>Ikke beskrevet ennå.</p></section>
+      </div>
+    </article>
+    <article class="persona-card">
+      <div class="avatars">
+        <figure>
+          <img src="assets/avatarer/regnskapsforer_kvinne_1.png" alt="Detaljert avatar for Heidi">
+          <figcaption>Detaljert</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/avatarer/regnskapsforer_kvinne_1_enkel.png" alt="Enkel avatar for Heidi">
+          <figcaption>Enkel</figcaption>
+        </figure>
+      </div>
+      <div class="persona-content">
+        <div class="card-heading">
+          <div>
+            <p class="role">Regnskapsfører</p>
+            <h2>Heidi</h2>
+            <span class="age" data-birth-year="1974">Født 1974</span>
+          </div>
+          <span class="status">utkast</span>
+        </div>
+        <section class="persona-notes"><h3>Kort om personen</h3><p>Fiktiv regnskapsfører. Videre beskrivelse kommer.</p></section><section class="persona-notes"><h3>Autorisasjonssituasjon</h3><p>Ikke beskrevet ennå.</p></section>
+      </div>
+    </article>
+    <article class="persona-card">
+      <div class="avatars">
+        <figure>
+          <img src="assets/avatarer/regnskapsforer_mann_1.png" alt="Detaljert avatar for Kristian">
+          <figcaption>Detaljert</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/avatarer/regnskapsforer_mann_1_enkel.png" alt="Enkel avatar for Kristian">
+          <figcaption>Enkel</figcaption>
+        </figure>
+      </div>
+      <div class="persona-content">
+        <div class="card-heading">
+          <div>
+            <p class="role">Regnskapsfører</p>
+            <h2>Kristian</h2>
+            <span class="age" data-birth-year="1975">Født 1975</span>
+          </div>
+          <span class="status">utkast</span>
+        </div>
+        <section class="persona-notes"><h3>Kort om personen</h3><p>Fiktiv regnskapsfører. Videre beskrivelse kommer.</p></section><section class="persona-notes"><h3>Autorisasjonssituasjon</h3><p>Ikke beskrevet ennå.</p></section>
+      </div>
+    </article>
+    <article class="persona-card">
+      <div class="avatars">
+        <figure>
+          <div class="avatar-unavailable" aria-label="Detaljert avatar er ikke laget ennå">Ikke laget</div>
+          <figcaption>Detaljert</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/avatarer/saksbehandler_1_enkel.png" alt="Enkel avatar for Hilde">
+          <figcaption>Enkel</figcaption>
+        </figure>
+      </div>
+      <div class="persona-content">
+        <div class="card-heading">
+          <div>
+            <p class="role">Saksbehandler</p>
+            <h2>Hilde</h2>
+            <span class="age" data-birth-year="1980">Født 1980</span>
+          </div>
+          <span class="status">utkast</span>
+        </div>
+        <section class="persona-notes"><h3>Kort om personen</h3><p>Fiktiv saksbehandler. Foreløpig finnes avataren bare i enkel stil.</p></section><section class="persona-notes"><h3>Autorisasjonssituasjon</h3><p>Ikke beskrevet ennå.</p></section>
+      </div>
+    </article></div>
+  </section>
+  <section class="persona-group" aria-labelledby="Pensjonister">
+    <h2 id="Pensjonister">Pensjonister</h2>
+    <div class="persona-grid">
+    <article class="persona-card">
+      <div class="avatars">
+        <figure>
+          <img src="assets/avatarer/pensjonist_kvinne_1.png" alt="Detaljert avatar for Anne">
+          <figcaption>Detaljert</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/avatarer/pensjonist_kvinne_1_enkel.png" alt="Enkel avatar for Anne">
+          <figcaption>Enkel</figcaption>
+        </figure>
+      </div>
+      <div class="persona-content">
+        <div class="card-heading">
+          <div>
+            <p class="role">Privatperson</p>
+            <h2>Anne</h2>
+            <span class="age" data-birth-year="1951">Født 1951</span>
+          </div>
+          <span class="status">utkast</span>
+        </div>
+        <section class="persona-notes"><h3>Kort om personen</h3><p>Fiktiv pensjonist. Videre beskrivelse kommer.</p></section><section class="persona-notes"><h3>Autorisasjonssituasjon</h3><p>Ikke beskrevet ennå.</p></section>
+      </div>
+    </article>
+    <article class="persona-card">
+      <div class="avatars">
+        <figure>
+          <img src="assets/avatarer/pensjonist_kvinne_2.png" alt="Detaljert avatar for Kari">
+          <figcaption>Detaljert</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/avatarer/pensjonist_kvinne_2_enkel.png" alt="Enkel avatar for Kari">
+          <figcaption>Enkel</figcaption>
+        </figure>
+      </div>
+      <div class="persona-content">
+        <div class="card-heading">
+          <div>
+            <p class="role">Privatperson</p>
+            <h2>Kari</h2>
+            <span class="age" data-birth-year="1953">Født 1953</span>
+          </div>
+          <span class="status">utkast</span>
+        </div>
+        <section class="persona-notes"><h3>Kort om personen</h3><p>Fiktiv pensjonist. Videre beskrivelse kommer.</p></section><section class="persona-notes"><h3>Autorisasjonssituasjon</h3><p>Ikke beskrevet ennå.</p></section>
+      </div>
+    </article>
+    <article class="persona-card">
+      <div class="avatars">
+        <figure>
+          <img src="assets/avatarer/pensjonist_mann_1.png" alt="Detaljert avatar for Jan">
+          <figcaption>Detaljert</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/avatarer/pensjonist_mann_1_enkel.png" alt="Enkel avatar for Jan">
+          <figcaption>Enkel</figcaption>
+        </figure>
+      </div>
+      <div class="persona-content">
+        <div class="card-heading">
+          <div>
+            <p class="role">Privatperson</p>
+            <h2>Jan</h2>
+            <span class="age" data-birth-year="1950">Født 1950</span>
+          </div>
+          <span class="status">utkast</span>
+        </div>
+        <section class="persona-notes"><h3>Kort om personen</h3><p>Fiktiv pensjonist. Videre beskrivelse kommer.</p></section><section class="persona-notes"><h3>Autorisasjonssituasjon</h3><p>Ikke beskrevet ennå.</p></section>
+      </div>
+    </article>
+    <article class="persona-card">
+      <div class="avatars">
+        <figure>
+          <img src="assets/avatarer/pensjonist_mann_2.png" alt="Detaljert avatar for Bjørn">
+          <figcaption>Detaljert</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/avatarer/pensjonist_mann_2_enkel.png" alt="Enkel avatar for Bjørn">
+          <figcaption>Enkel</figcaption>
+        </figure>
+      </div>
+      <div class="persona-content">
+        <div class="card-heading">
+          <div>
+            <p class="role">Privatperson</p>
+            <h2>Bjørn</h2>
+            <span class="age" data-birth-year="1952">Født 1952</span>
+          </div>
+          <span class="status">utkast</span>
+        </div>
+        <section class="persona-notes"><h3>Kort om personen</h3><p>Fiktiv pensjonist. Videre beskrivelse kommer.</p></section><section class="persona-notes"><h3>Autorisasjonssituasjon</h3><p>Ikke beskrevet ennå.</p></section>
+      </div>
+    </article></div>
+  </section>
+  <section class="persona-group" aria-labelledby="Voksne-privatpersoner">
+    <h2 id="Voksne-privatpersoner">Voksne privatpersoner</h2>
+    <div class="persona-grid">
+    <article class="persona-card">
+      <div class="avatars">
+        <figure>
+          <img src="assets/avatarer/privatperson_kvinne_1.png" alt="Detaljert avatar for Linda">
+          <figcaption>Detaljert</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/avatarer/privatperson_kvinne_1_enkel.png" alt="Enkel avatar for Linda">
+          <figcaption>Enkel</figcaption>
+        </figure>
+      </div>
+      <div class="persona-content">
+        <div class="card-heading">
+          <div>
+            <p class="role">Privatperson</p>
+            <h2>Linda</h2>
+            <span class="age" data-birth-year="1979">Født 1979</span>
+          </div>
+          <span class="status">utkast</span>
+        </div>
+        <section class="persona-notes"><h3>Kort om personen</h3><p>Fiktiv voksen privatperson. Videre beskrivelse kommer.</p></section><section class="persona-notes"><h3>Autorisasjonssituasjon</h3><p>Ikke beskrevet ennå.</p></section>
+      </div>
+    </article>
+    <article class="persona-card">
+      <div class="avatars">
+        <figure>
+          <img src="assets/avatarer/privatperson_kvinne_2.png" alt="Detaljert avatar for Silje">
+          <figcaption>Detaljert</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/avatarer/privatperson_kvinne_2_enkel.png" alt="Enkel avatar for Silje">
+          <figcaption>Enkel</figcaption>
+        </figure>
+      </div>
+      <div class="persona-content">
+        <div class="card-heading">
+          <div>
+            <p class="role">Privatperson</p>
+            <h2>Silje</h2>
+            <span class="age" data-birth-year="1984">Født 1984</span>
+          </div>
+          <span class="status">utkast</span>
+        </div>
+        <section class="persona-notes"><h3>Kort om personen</h3><p>Fiktiv voksen privatperson. Videre beskrivelse kommer.</p></section><section class="persona-notes"><h3>Autorisasjonssituasjon</h3><p>Ikke beskrevet ennå.</p></section>
+      </div>
+    </article>
+    <article class="persona-card">
+      <div class="avatars">
+        <figure>
+          <img src="assets/avatarer/privatperson_mann_1.png" alt="Detaljert avatar for Thomas">
+          <figcaption>Detaljert</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/avatarer/privatperson_mann_1_enkel.png" alt="Enkel avatar for Thomas">
+          <figcaption>Enkel</figcaption>
+        </figure>
+      </div>
+      <div class="persona-content">
+        <div class="card-heading">
+          <div>
+            <p class="role">Privatperson</p>
+            <h2>Thomas</h2>
+            <span class="age" data-birth-year="1981">Født 1981</span>
+          </div>
+          <span class="status">utkast</span>
+        </div>
+        <section class="persona-notes"><h3>Kort om personen</h3><p>Fiktiv voksen privatperson. Videre beskrivelse kommer.</p></section><section class="persona-notes"><h3>Autorisasjonssituasjon</h3><p>Ikke beskrevet ennå.</p></section>
+      </div>
+    </article>
+    <article class="persona-card">
+      <div class="avatars">
+        <figure>
+          <img src="assets/avatarer/privatperson_mann_2.png" alt="Detaljert avatar for Anders">
+          <figcaption>Detaljert</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/avatarer/privatperson_mann_2_enkel.png" alt="Enkel avatar for Anders">
+          <figcaption>Enkel</figcaption>
+        </figure>
+      </div>
+      <div class="persona-content">
+        <div class="card-heading">
+          <div>
+            <p class="role">Privatperson</p>
+            <h2>Anders</h2>
+            <span class="age" data-birth-year="1977">Født 1977</span>
+          </div>
+          <span class="status">utkast</span>
+        </div>
+        <section class="persona-notes"><h3>Kort om personen</h3><p>Fiktiv voksen privatperson. Videre beskrivelse kommer.</p></section><section class="persona-notes"><h3>Autorisasjonssituasjon</h3><p>Ikke beskrevet ennå.</p></section>
+      </div>
+    </article></div>
+  </section>
+  <section class="persona-group" aria-labelledby="Digitale-aktører">
+    <h2 id="Digitale-aktører">Digitale aktører</h2>
+    <div class="persona-grid">
+    <article class="persona-card">
+      <div class="avatars">
+        <figure>
+          <img src="assets/avatarer/systembruker_1.png" alt="Detaljert avatar for Systembruker">
+          <figcaption>Detaljert</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/avatarer/systembruker_1_enkel.png" alt="Enkel avatar for Systembruker">
+          <figcaption>Enkel</figcaption>
+        </figure>
+      </div>
+      <div class="persona-content">
+        <div class="card-heading">
+          <div>
+            <p class="role">Systembruker</p>
+            <h2>Systembruker</h2>
+            <span class="age">Ikke en menneskelig persona</span>
+          </div>
+          <span class="status">utkast</span>
+        </div>
+        <section class="persona-notes"><h3>Kort om personen</h3><p>Fiktiv digital aktør. Alder er ikke relevant.</p></section><section class="persona-notes"><h3>Autorisasjonssituasjon</h3><p>Ikke beskrevet ennå.</p></section>
+      </div>
+    </article></div>
+  </section>
+  </main>
+  <script>
+    document.querySelectorAll('[data-birth-year]').forEach((element) => {
+      const age = new Date().getFullYear() - Number(element.dataset.birthYear);
+      element.textContent = age + ' år';
+    });
+  </script>
+</body>
+</html>
